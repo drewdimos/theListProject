@@ -4,7 +4,8 @@
   <meta charset="utf-8">
       
       <meta name="viewport" content="initial-scale=1.0"> 
-      <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="./css/bootstrap_custom.css">
+      <link rel="stylesheet" type="text/css" href="./css/style.css">
     
       <title>The List Project</title>
 
@@ -12,35 +13,34 @@
 
   <body>
 
-  <div id="target"></div>
-
-  <div class="loader">
-    <div class="loader-text">Loading...</div>
-    <div class="progress">
-      <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" style="width: 100%"></div>
-    </div> <!-- progress -->
-  </div> <!-- loader -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="react-header"></div>
+      </div>
+    </div>
+  </div> <!-- header -->
   
-  <header>
-    <nav></nav>
-  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="react-slideshow"></div>
+      </div>
+    </div>
+  </div> <!-- slideshow -->
 
-  <div id="slideshow-content"></div>
+  <div class="container">
+    <div id="react-problems"></div>
+  </div> <!-- problems -->
 
-  <main>
-    <div class="page" id="adoption">
-      <div class="container">
-        <h2 class="page-headline">Adoptions</h2>
-        <p>This is some filler text. I don't know if I'm going to need it</p>
-      </div> <!-- container -->
-    </div> <!-- page adoption -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="react-footer"></div>
+      </div>
+    </div> 
+  </div><!-- footer -->
 
-    <div class="page" id="appointments">
-      <div class="container">
-        <h2 class="page-headline">Appointments</h2>
-        <p>Some more filler text for these pages</p>
-      </div> <!-- container -->
-    </div> <!-- page appointments -->
 
   <script type="text/javascript" src="./dev/bundle.js"></script>
   </body>

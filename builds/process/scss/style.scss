@@ -1,3 +1,4 @@
+
 $blue1: #3BABB6;
 $blue2: #17263E;
 $orange1: #D04C3C;
@@ -6,8 +7,35 @@ $grey-font: #161616;
 
 body {
 	background-color: $orange1;
-	color: magenta;
 }
+
+.active {
+	background-color: $blue1;
+}
+
+.subhead {
+	display: block;
+	font-size: .7em;
+}
+
+.list {
+	display: flex;
+}
+
+.problem-node {
+	height: 200px;
+	background-color: $blue2;
+	color: white;
+	padding: 10px;
+	margin: 10px;
+}
+
+#react-slideshow {
+	min-height: 500px;
+}
+
+
+
 
 
 
