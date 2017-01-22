@@ -1,0 +1,72 @@
+import { Component } from 'react';
+import { ProblemBox } from './ProblemBox';
+import { Problem } from './Problem';
+import { AddProblemForm } from './AddProblemForm';
+import { Navbar } from './navbar';
+import { Menu } from './Menu';
+
+export class List extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+
+			allProblems: [
+			{
+				name: "Project 1",
+				image:" ",
+				info: "this is the info about the project",
+				icons: true,
+				mentalHealth: true
+
+			},
+			{
+				name: "Project 2",
+				image:" ",
+				info: "This is another project",
+				icons: false,
+				mobility: true
+
+			},
+			{
+				name: "Project 3",
+				image:" ",
+				info: "The coolest project to ever exist",
+				icons: true,
+				mentalHealth: true
+
+			}
+		]
+		}
+	}
+	render() {
+		return(
+			<div className="app">
+
+			<Navbar cat1="Problems" 
+				cat2="Create A Challenge" 
+				cat3="Bitches"/>
+
+			<Menu />
+
+			{(this.props.location.pathname === "/") ?
+				<ProblemBox assets={this.state.allProblems}/> :
+			(this.props.location.pathname === "/add-problem") ?
+			<AddProblemForm /> : <ProblemBox assets={this.state.allProblems}
+											 filter={this.props.params.filter}/>
+
+			}
+			</div>
+		)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -18,16 +18,24 @@ body {
 	font-size: .7em;
 }
 
-.list {
-	display: flex;
+.photo {
+	height: 100px;
 }
 
-.problem-node {
+.proj-head {
+	background: $orange2;
+}
+
+.icons svg{
 	height: 200px;
+	width: 100px;
+	fill: green;
+}
+.problem-node {
+	height: 350px;
 	background-color: $blue2;
 	color: white;
 	padding: 10px;
-	margin: 10px;
 }
 
 #react-slideshow {
