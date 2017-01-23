@@ -5,6 +5,7 @@ import { AddProblemForm } from './AddProblemForm';
 import { Navbar } from './navbar';
 import { Menu } from './Menu';
 
+
 export class List extends Component {
 	constructor(props) {
 		super(props)
@@ -16,7 +17,9 @@ export class List extends Component {
 				image:" ",
 				info: "this is the info about the project",
 				icons: true,
-				mentalHealth: true
+				mentalHealth: true,
+				mobility: false,
+				education: false
 
 			},
 			{
@@ -24,7 +27,9 @@ export class List extends Component {
 				image:" ",
 				info: "This is another project",
 				icons: false,
-				mobility: true
+				mobility: true,
+				mentalHealth: false,
+				education: false
 
 			},
 			{
@@ -32,7 +37,9 @@ export class List extends Component {
 				image:" ",
 				info: "The coolest project to ever exist",
 				icons: true,
-				mentalHealth: true
+				mentalHealth: true,
+				mobility: false,
+				education: false
 
 			}
 		]
