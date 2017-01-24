@@ -4,9 +4,8 @@ var webpack = require('webpack');
 module.exports = {
 	entry: './builds/process/js/app.js',
 	output: {
-		path: 'builds/dev',
+		path: './builds/dev',
 		filename: 'bundle.js',
-		publicPath: 'dev'
 	},
 	devServer: {
 		inline: true,

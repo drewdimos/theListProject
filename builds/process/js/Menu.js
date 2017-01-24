@@ -1,12 +1,12 @@
 import { Link } from 'react-router';
-import{ ButtonGroup, DropdownButton } from 'react-bootstrap';
+import{ DropdownButton } from 'react-bootstrap';
 
 
 
 export const Menu = () => (
 
 
-
+	<div className="menu-space">
     <DropdownButton title="Filter By" id="bg-nested-dropdown">
         <Link to="/" activeClassName="active">
 			<p>All Problems</p>
@@ -18,6 +18,7 @@ export const Menu = () => (
 			<p>Mobility</p>
 		</Link>
     </DropdownButton>
+    </div>
 
 
 	

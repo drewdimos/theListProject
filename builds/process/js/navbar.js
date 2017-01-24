@@ -16,7 +16,7 @@ export const Navbar = ({cat1, cat2, cat3}) => (
         </div> 
         <div className="collapse navbar-collapse" id="collapse">
           <ul className="nav navbar-nav navbar-right">
-            <li className="active"><a href="#">{cat1}</a></li>
+            <li className="selected"><a href="#">{cat1}</a></li>
             <li><a href="#add-problem">{cat2}</a></li>
             <li><a href="#">{cat3}</a></li>
           </ul>

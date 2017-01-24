@@ -1,63 +1,59 @@
 import { PropTypes } from 'react';
-import { Component } from 'react';
 
 
-	export class AddProblemForm extends Component {
+	export const AddProblemForm = ({name, image, info, icons, mentalHealth, onNewProblem }) => {
 
-		constructor(props) {
-			super(props)
-			this.submit = this.submit.bind(this)
-		}
+		let _name, _image, _info, _icons, _mentalHealth
 
-		submit(e) {
+		const submit = (e) => {
 			e.preventDefault()
-			console.log('name', this.refs.name.value)
-			console.log('image', this.refs.image.value)
-			console.log('info', this.refs.info.value)
-			console.log('icons', this.refs.icons.checked)
-			console.log('mentalHealth', this.refs.mentalHealth.checked)
+			onNewProblem ({
+				name: _name.value,
+				image: _image.value,
+				info: _info.value,
+				icons: _icons.checked,
+				mentalHealth: _mentalHealth.checked
+			})
+ 			_name.value = ''
+	 		_image.value = ''
+			_info.value = ''
+	 		_icons.checked = false
+			_mentalHealth.checked = false
 		}
 
-		render() {
+		return(
+			<form onSubmit={submit} className="add-problem-form">
 
-			return (
-				<form onSubmit={this.submit} className="add-problem-form">
+					<label htmlFor="name">Project Name</label>
+					<input id="name" type="text" required ref={input => _name = input}/>
 
-					<label htmlfor="name">Project Name</label>
-					<input id="name" type="text" required ref="name"/>
+					<label htmlFor="image">Image</label>
+					<input id="image" type="text" required ref={input => _image = input}/>
 
-					<label htmlfor="image">Image</label>
-					<input id="image" type="text" required />
-
-					<label htmlfor="info">Description of Project</label>
-					<input id="info" type="text" required ref="image"/>
+					<label htmlFor="info">Description of Project</label>
+					<input id="info" type="text" required ref={input => _info = input}/>
 				
 				<div>
-					<label htmlfor="icons">UP?</label>
-					<input id="icons" type="checkbox" required refs="icons"/>
+					<label htmlFor="icons">UP?</label>
+					<input id="icons" type="checkbox" required ref={input => _icons = input}/>
 				</div>
 
 				<div>
-					<label htmlfor="mentalHealth">Mental Health Related?</label>
-					<input id="mentalHealth" type="checkbox" required refs="mentalHealth"/>
+					<label htmlFor="mentalHealth">Mental Health Related?</label>
+					<input id="mentalHealth" type="checkbox" required ref={input => _mentalHealth = input}/>
 				</div>
+
 				<button>Add Problem</button>
-				</form>
-				)
-		}
-		
 
+			</form>
+		)
 
-}
-	
-
+	}
 
 AddProblemForm.propTypes = {
 	name: PropTypes.string.isRequired,
 	image: PropTypes.string.isRequired,
 	info: PropTypes.string.isRequired,
 	icons: PropTypes.string.isRequired,
-	mobility: PropTypes.bool.isRequired,
 	mentalHealth: PropTypes.bool.isRequired,
-	education: PropTypes.bool.isRequired
 }

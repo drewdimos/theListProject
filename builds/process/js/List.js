@@ -44,7 +44,19 @@ export class List extends Component {
 			}
 		]
 		}
+		
+		this.addProblem = this.addProblem.bind(this)
 	}
+
+	addProblem (newProblem) {
+		this.setState({
+			allProblems: [
+				...this.state.allProblems,
+				newProblem
+			]
+		})
+	}
+
 	render() {
 		return(
 			<div className="app">
@@ -58,7 +70,7 @@ export class List extends Component {
 			{(this.props.location.pathname === "/") ?
 				<ProblemBox assets={this.state.allProblems}/> :
 			(this.props.location.pathname === "/add-problem") ?
-			<AddProblemForm /> : <ProblemBox assets={this.state.allProblems}
+			<AddProblemForm onNewProblem = {this.addProblem}/> : <ProblemBox assets={this.state.allProblems}
 											 filter={this.props.params.filter}/>
 
 			}

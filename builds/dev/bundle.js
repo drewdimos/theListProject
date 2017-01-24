@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "dev";
+/******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -21577,7 +21577,7 @@
 	          { className: 'nav navbar-nav navbar-right' },
 	          React.createElement(
 	            'li',
-	            { className: 'active' },
+	            { className: 'selected' },
 	            React.createElement(
 	              'a',
 	              { href: '#' },
@@ -26675,7 +26675,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: #D04C3C; }\n\n.active {\n  background-color: #3BABB6; }\n\n.subhead {\n  display: block;\n  font-size: .7em; }\n\n.photo {\n  height: 100px; }\n\n.proj-head {\n  background: #E6AB55; }\n\n.icons svg {\n  height: 200px;\n  width: 100px;\n  fill: green; }\n\n.problem-node {\n  height: 350px;\n  background-color: #17263E;\n  color: white;\n  padding: 10px; }\n\n#react-slideshow {\n  min-height: 500px; }\n", ""]);
+	exports.push([module.id, "body {\n  background-color: #D04C3C; }\n\n.subhead {\n  display: block;\n  font-size: .7em; }\n\n.photo {\n  height: 100px; }\n\n.proj-head {\n  background: #E6AB55; }\n\n.icons svg {\n  height: 200px;\n  width: 100px;\n  fill: green; }\n\n.problem-node {\n  height: 350px;\n  background-color: #17263E;\n  color: white;\n  padding: 10px; }\n\n#react-slideshow {\n  min-height: 500px; }\n\n.menu-space {\n  margin-bottom: 40px; }\n\n.navbar-brand h1 {\n  line-height: 0; }\n\n.selected {\n  background-color: #3BABB6; }\n", ""]);
 
 	// exports
 
@@ -27290,6 +27290,8 @@
 
 	var _Menu = __webpack_require__(245);
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -27335,10 +27337,19 @@
 
 				}]
 			};
+
+			_this.addProblem = _this.addProblem.bind(_this);
 			return _this;
 		}
 
 		_createClass(List, [{
+			key: 'addProblem',
+			value: function addProblem(newProblem) {
+				this.setState({
+					allProblems: [].concat(_toConsumableArray(this.state.allProblems), [newProblem])
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				return React.createElement(
@@ -27348,7 +27359,7 @@
 						cat2: 'Create A Challenge',
 						cat3: 'Big Money' }),
 					React.createElement(_Menu.Menu, null),
-					this.props.location.pathname === "/" ? React.createElement(_ProblemBox.ProblemBox, { assets: this.state.allProblems }) : this.props.location.pathname === "/add-problem" ? React.createElement(_AddProblemForm.AddProblemForm, null) : React.createElement(_ProblemBox.ProblemBox, { assets: this.state.allProblems,
+					this.props.location.pathname === "/" ? React.createElement(_ProblemBox.ProblemBox, { assets: this.state.allProblems }) : this.props.location.pathname === "/add-problem" ? React.createElement(_AddProblemForm.AddProblemForm, { onNewProblem: this.addProblem }) : React.createElement(_ProblemBox.ProblemBox, { assets: this.state.allProblems,
 						filter: this.props.params.filter })
 				);
 			}
@@ -27368,103 +27379,104 @@
 	});
 	exports.AddProblemForm = undefined;
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var AddProblemForm = exports.AddProblemForm = function AddProblemForm(_ref) {
+		var name = _ref.name,
+		    image = _ref.image,
+		    info = _ref.info,
+		    icons = _ref.icons,
+		    mentalHealth = _ref.mentalHealth,
+		    onNewProblem = _ref.onNewProblem;
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+		var _name = void 0,
+		    _image = void 0,
+		    _info = void 0,
+		    _icons = void 0,
+		    _mentalHealth = void 0;
 
-	var AddProblemForm = exports.AddProblemForm = function (_Component) {
-		_inherits(AddProblemForm, _Component);
+		var submit = function submit(e) {
+			e.preventDefault();
+			onNewProblem({
+				name: _name.value,
+				image: _image.value,
+				info: _info.value,
+				icons: _icons.checked,
+				mentalHealth: _mentalHealth.checked
+			});
+			_name.value = '';
+			_image.value = '';
+			_info.value = '';
+			_icons.checked = false;
+			_mentalHealth.checked = false;
+		};
 
-		function AddProblemForm(props) {
-			_classCallCheck(this, AddProblemForm);
-
-			var _this = _possibleConstructorReturn(this, (AddProblemForm.__proto__ || Object.getPrototypeOf(AddProblemForm)).call(this, props));
-
-			_this.submit = _this.submit.bind(_this);
-			return _this;
-		}
-
-		_createClass(AddProblemForm, [{
-			key: 'submit',
-			value: function submit(e) {
-				e.preventDefault();
-				console.log('name', this.refs.name.value);
-				console.log('image', this.refs.image.value);
-				console.log('info', this.refs.info.value);
-				console.log('icons', this.refs.icons.checked);
-				console.log('mentalHealth', this.refs.mentalHealth.checked);
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-
-				return React.createElement(
-					'form',
-					{ onSubmit: this.submit, className: 'add-problem-form' },
-					React.createElement(
-						'label',
-						{ htmlfor: 'name' },
-						'Project Name'
-					),
-					React.createElement('input', { id: 'name', type: 'text', required: true, ref: 'name' }),
-					React.createElement(
-						'label',
-						{ htmlfor: 'image' },
-						'Image'
-					),
-					React.createElement('input', { id: 'image', type: 'text', required: true }),
-					React.createElement(
-						'label',
-						{ htmlfor: 'info' },
-						'Description of Project'
-					),
-					React.createElement('input', { id: 'info', type: 'text', required: true, ref: 'image' }),
-					React.createElement(
-						'div',
-						null,
-						React.createElement(
-							'label',
-							{ htmlfor: 'icons' },
-							'UP?'
-						),
-						React.createElement('input', { id: 'icons', type: 'checkbox', required: true, refs: 'icons' })
-					),
-					React.createElement(
-						'div',
-						null,
-						React.createElement(
-							'label',
-							{ htmlfor: 'mentalHealth' },
-							'Mental Health Related?'
-						),
-						React.createElement('input', { id: 'mentalHealth', type: 'checkbox', required: true, refs: 'mentalHealth' })
-					),
-					React.createElement(
-						'button',
-						null,
-						'Add Problem'
-					)
-				);
-			}
-		}]);
-
-		return AddProblemForm;
-	}(_react.Component);
+		return React.createElement(
+			'form',
+			{ onSubmit: submit, className: 'add-problem-form' },
+			React.createElement(
+				'label',
+				{ htmlFor: 'name' },
+				'Project Name'
+			),
+			React.createElement('input', { id: 'name', type: 'text', required: true, ref: function ref(input) {
+					return _name = input;
+				} }),
+			React.createElement(
+				'label',
+				{ htmlFor: 'image' },
+				'Image'
+			),
+			React.createElement('input', { id: 'image', type: 'text', required: true, ref: function ref(input) {
+					return _image = input;
+				} }),
+			React.createElement(
+				'label',
+				{ htmlFor: 'info' },
+				'Description of Project'
+			),
+			React.createElement('input', { id: 'info', type: 'text', required: true, ref: function ref(input) {
+					return _info = input;
+				} }),
+			React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'label',
+					{ htmlFor: 'icons' },
+					'UP?'
+				),
+				React.createElement('input', { id: 'icons', type: 'checkbox', required: true, ref: function ref(input) {
+						return _icons = input;
+					} })
+			),
+			React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'label',
+					{ htmlFor: 'mentalHealth' },
+					'Mental Health Related?'
+				),
+				React.createElement('input', { id: 'mentalHealth', type: 'checkbox', required: true, ref: function ref(input) {
+						return _mentalHealth = input;
+					} })
+			),
+			React.createElement(
+				'button',
+				null,
+				'Add Problem'
+			)
+		);
+	};
 
 	AddProblemForm.propTypes = {
 		name: _react.PropTypes.string.isRequired,
 		image: _react.PropTypes.string.isRequired,
 		info: _react.PropTypes.string.isRequired,
 		icons: _react.PropTypes.string.isRequired,
-		mobility: _react.PropTypes.bool.isRequired,
-		mentalHealth: _react.PropTypes.bool.isRequired,
-		education: _react.PropTypes.bool.isRequired
+		mentalHealth: _react.PropTypes.bool.isRequired
 	};
 
 /***/ },
@@ -27484,33 +27496,37 @@
 
 	var Menu = exports.Menu = function Menu() {
 		return React.createElement(
-			_reactBootstrap.DropdownButton,
-			{ title: 'Filter By', id: 'bg-nested-dropdown' },
+			'div',
+			{ className: 'menu-space' },
 			React.createElement(
-				_reactRouter.Link,
-				{ to: '/', activeClassName: 'active' },
+				_reactBootstrap.DropdownButton,
+				{ title: 'Filter By', id: 'bg-nested-dropdown' },
 				React.createElement(
-					'p',
-					null,
-					'All Problems'
-				)
-			),
-			React.createElement(
-				_reactRouter.Link,
-				{ to: '/mentalHealth', activeClassName: 'active' },
+					_reactRouter.Link,
+					{ to: '/', activeClassName: 'active' },
+					React.createElement(
+						'p',
+						null,
+						'All Problems'
+					)
+				),
 				React.createElement(
-					'p',
-					null,
-					'Mental Health'
-				)
-			),
-			React.createElement(
-				_reactRouter.Link,
-				{ to: '/mobility', activeClassName: 'active' },
+					_reactRouter.Link,
+					{ to: '/mentalHealth', activeClassName: 'active' },
+					React.createElement(
+						'p',
+						null,
+						'Mental Health'
+					)
+				),
 				React.createElement(
-					'p',
-					null,
-					'Mobility'
+					_reactRouter.Link,
+					{ to: '/mobility', activeClassName: 'active' },
+					React.createElement(
+						'p',
+						null,
+						'Mobility'
+					)
 				)
 			)
 		);

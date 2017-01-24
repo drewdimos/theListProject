@@ -9,10 +9,6 @@ body {
 	background-color: $orange1;
 }
 
-.active {
-	background-color: $blue1;
-}
-
 .subhead {
 	display: block;
 	font-size: .7em;
@@ -40,6 +36,18 @@ body {
 
 #react-slideshow {
 	min-height: 500px;
+}
+
+.menu-space {
+	margin-bottom: 40px;
+}
+
+.navbar-brand h1 {
+	line-height: 0;
+}
+
+.selected {
+	background-color: $blue1;
 }
 
 
