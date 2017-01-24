@@ -1,7 +1,10 @@
+var webpack = require('webpack');
+var path = require('path');
+
 module.exports = {
 	entry: './builds/process/js/app.js',
 	output: {
-		path:'../dev',
+		path: 'builds/dev',
 		filename: 'bundle.js',
 		publicPath: 'dev'
 	},
