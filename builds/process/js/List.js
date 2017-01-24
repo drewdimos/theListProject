@@ -51,7 +51,7 @@ export class List extends Component {
 
 			<Navbar cat1="Problems" 
 				cat2="Create A Challenge" 
-				cat3="Bitches"/>
+				cat3="Big Money"/>
 
 			<Menu />
 
