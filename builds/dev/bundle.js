@@ -27346,7 +27346,7 @@
 					{ className: 'app' },
 					React.createElement(_navbar.Navbar, { cat1: 'Problems',
 						cat2: 'Create A Challenge',
-						cat3: 'Bitches' }),
+						cat3: 'Big Money' }),
 					React.createElement(_Menu.Menu, null),
 					this.props.location.pathname === "/" ? React.createElement(_ProblemBox.ProblemBox, { assets: this.state.allProblems }) : this.props.location.pathname === "/add-problem" ? React.createElement(_AddProblemForm.AddProblemForm, null) : React.createElement(_ProblemBox.ProblemBox, { assets: this.state.allProblems,
 						filter: this.props.params.filter })
